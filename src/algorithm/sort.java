@@ -41,8 +41,6 @@ public class sort {
 		int j = end ; //오른쪽에서 시작 값 
 		int temp; //swap 할 때 담을 변수 
 		
-		//4, 7, 5, 8, 10, 6, 1, 3, 2, 9
-		//1, 2, 3, 4, 10, 6, 8, 5, 7, 9
 		while(i <= j) { //엇갈릴때 까지 반복. 
 			
 			while(i <= end && data[i] < data[key]) { //키값보다 큰 값 만날때까지 이동.
@@ -52,7 +50,8 @@ public class sort {
 			while(j >= start && data[j] > data[key] ) { //오른쪽에서부터 키 값보다 작은 값 만날 때 까지 이동
 				j--; 
 			}
-	  
+			// 3, 4, 5, 1, 6, 2, 10 , 9 ,8, 7
+			// 3, 2, 1, 4, 6, 5, 10 , 9 ,8, 7
 			if(i > j) { //엇갈렸따면 왼쪽 값과 키값을 바꿔줌. 
 				temp = data[j]; 
 				data[j] = data[key];
@@ -67,4 +66,5 @@ public class sort {
 			quickSort(data, j + 1, end); 
 		}
 	}
+	
 }
