@@ -1,26 +1,58 @@
 package algorithm;
 
+import java.util.Iterator;
+
 public class sort {
 
 	public static void main(String[] args) {
-		int number = 15;
-		int[] data = { 1, 10, 5, 8, 7, 6, 4, 3, 2, 9, 11 , 12 ,13, 14, 15  };
+		int number = 10;
+		int[] data = { 1, 10, 5, 8, 7, 6, 4, 3, 2, 9 };
 
+		
 		sort sort = new sort();
-		sort.quickSort(data, 0, number - 1);
+		//sort.quickSort(data, 0, number - 1);
+		sort.selectSort(data);
 		for (int i = 0; i < number; i++) {
 			System.out.print(data[i] + "  ");
 		}
 	}
 
 	// 선택정렬
-	public void selectSort() {
+	public void selectSort(int[] data) {
 		// 가장 작은 것을 앞으로 보내면 어떨까?
+		int min = 0;
+		int index = 0;
+		int temp;
+		
+		//1, 10, 5, 8, 7, 6, 4, 3, 2, 9
+		for (int i = 0; i < data.length; i++) {
+			min = 999;
+			for (int j = i; j < data.length; j++) { //가장작은 값을 찾는거.
+				if(min > data[j]) {
+					min = data[j];
+					index = j;
+				}
+			}
+			temp = data[i];
+			data[i] = data[index];
+			data[index]	= temp;
+		}
 	}
 
 	// 버블정렬
-	public void bubbleSort() {
+	public void bubbleSort(int[] data) {
 		// 두개 비교해서 작은것을 왼쪽으로 보내면 어떨까?
+		int temp;
+		// 1, 10, 5, 8, 7, 6, 4, 3, 2, 9, 11 , 12 ,13, 14, 15
+		// 1, 5, 8, 7, 6, 4, 3, 2, 9, 10  
+		// 
+		for (int i = 0; i < data.length; i++) {
+			if(data[i] > data[i+1]) {
+				temp = data[i+1];
+				data[i+1] = data[i];
+				data[i] = temp;
+			}
+		}
 	}
 
 	// 삽입정렬
