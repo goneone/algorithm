@@ -11,7 +11,9 @@ public class sort {
 		
 		sort sort = new sort();
 		//sort.quickSort(data, 0, number - 1);
-		sort.selectSort(data);
+		//sort.selectSort(data);
+		sort.insertSort(data);
+		//sort.bubbleSort(data);
 		for (int i = 0; i < number; i++) {
 			System.out.print(data[i] + "  ");
 		}
@@ -43,24 +45,36 @@ public class sort {
 	public void bubbleSort(int[] data) {
 		// 두개 비교해서 작은것을 왼쪽으로 보내면 어떨까?
 		int temp;
-		// 1, 10, 5, 8, 7, 6, 4, 3, 2, 9, 11 , 12 ,13, 14, 15
-		// 1, 5, 8, 7, 6, 4, 3, 2, 9, 10  
-		// 
+		
 		for (int i = 0; i < data.length; i++) {
-			if(data[i] > data[i+1]) {
-				temp = data[i+1];
-				data[i+1] = data[i];
-				data[i] = temp;
+			for (int j = 0; j < data.length - 1 - i; j++) {
+				if(data[j] > data[j+1]) {
+					temp = data[j+1];
+					data[j+1] = data[j];
+					data[j] = temp;
+				}
 			}
 		}
 	}
 
 	// 삽입정렬
-	public void insertSort() {
+	public void insertSort(int data[]) {
 		// 각 숫자를 적절한 위치에 삽입하면 어떨까?
-
+		////1, 10, 5, 8, 7, 6, 4, 3, 2, 9
+		int temp;
+		int j;
+		for (int i = 0; i < data.length -1 ; i++) {
+			j = i;
+			while(j>=0 && data[j] > data[j+1]) {
+				temp = data[j];
+				data[j] = data[j+1];
+				data[j+1] = temp;
+				j--;
+			}
+		}
 	}
 	
+	//퀵정렬
 	public void quickSort(int[] data, int start, int end) {
 		//특정한 값을 기준으로 큰 숫자와 작은 숫자를 나누면 어떨까?(두 집합으로)
 		
