@@ -5,18 +5,20 @@ import java.util.Iterator;
 public class sort {
 
 	public static void main(String[] args) {
-		int number = 10;
-		int[] data = { 1, 10, 5, 8, 7, 6, 4, 3, 2, 9 };
-
+		int number = 9;
+		//int[] data = { 1, 10, 5, 8, 7, 6, 4, 3, 2, 9 };
+		int[] data = { 7, 6, 5, 8, 3, 5 ,9 , 1, 6  };
 		
 		sort sort = new sort();
 		//sort.quickSort(data, 0, number - 1);
 		//sort.selectSort(data);
-		sort.insertSort(data);
+		//sort.insertSort(data);
 		//sort.bubbleSort(data);
-		for (int i = 0; i < number; i++) {
-			System.out.print(data[i] + "  ");
-		}
+		sort.countingSort();
+		//sort.heapSort(data);
+		//for (int i = 0; i < number; i++) {
+		//	System.out.print(data[i] + "  ");
+		//}
 	}
 
 	// 선택정렬
@@ -75,6 +77,11 @@ public class sort {
 	}
 	
 	//퀵정렬
+	public void quickSort2(int[] data, int start, int end) {
+		if()
+	}
+	
+	//퀵정렬
 	public void quickSort(int[] data, int start, int end) {
 		//특정한 값을 기준으로 큰 숫자와 작은 숫자를 나누면 어떨까?(두 집합으로)
 		
@@ -110,6 +117,83 @@ public class sort {
 	  
 			quickSort(data, start, j - 1); 
 			quickSort(data, j + 1, end); 
+		}
+	}
+	
+	//힙 정렬
+	public void heapSort(int[] data) {
+		// 7, 6, 5, 8, 3, 5 ,9 , 1, 6 
+		int number = data.length;
+		int[] heap = data;
+		
+		//힙을 구성
+		for (int i = 1; i < number; i++) {
+			int c = i;
+			do {
+				int root = (c - 1)/ 2; //상위 노드
+				System.out.println("root :" + root + ", i : "+ i );
+				if(heap[root] < heap[c]) {
+					int temp = heap[root];
+					heap[root] = heap[c];
+					heap[c] = temp;
+				}
+				c= root;
+			} while ( c != 0);
+		}
+		//크기를 줄여가며 반복적으로 힙을 구성
+		for (int i = number - 1; i >=0; i--) { //마지막이랑 첫번째꺼 교환
+			int temp = 	heap[0];
+			heap[0]  = 	heap[i];
+			heap[i]  = 	temp;
+			int root =  0;
+			int c	 =	1;
+			
+			do {
+				c = 2 * root + 1;
+				
+				//자식 중에 더 큰 값을 찾기
+				if(c < i-1 && heap[c]<heap[c+1]) { // 왼쪽 자식노드보다 오른쪽 자식노드가 클 경우 그리고 자식노드의 다음 자식노드와 비교할 때 인덱스 오류를 벗어나기 위해 c<i-1
+					c++; // c이동
+			    }
+				
+				//루트보다 자식이 크다면 교환
+				if(c<i && heap[root] < heap[c] ) { // 두 자식노드 중 큰 자식노드와 부모노드 비교 후 크다면 교환 그리고 자식노드가 전체 노드의 수를 벗어나지 않기 위해 c<i
+					temp = heap[root];
+					heap[root] = heap[c];
+					heap[c] = temp;     
+				}
+				root = c;
+			} while ( c < i);
+		} 
+	}
+	
+	//계수 정렬
+	public void countingSort() {
+		//언제쓸까? 
+		//데이터가 1이 5개 2가 4개 3이 ... 5가 5개 이런식으로 중복되는 데이터가 여러개 나오면서 정렬할 경우
+		
+		int[] array = {
+				1, 3, 2, 4, 3, 2, 5, 3, 1, 2 ,
+				3, 4, 4, 3, 5, 1, 2, 3, 5, 2 ,
+				3, 1, 4, 3, 5, 1, 2, 1, 1, 1
+		};
+		int[] count = new int[5] ;
+		
+		//count 값에  0 , 0 , 0 , 0 , 0  넣기
+		for (int i = 0; i < count.length; i++) {
+			count[i] = 0;
+		};
+		
+		for (int i = 0; i < array.length; i++) {	  
+			count[array[i] - 1 ] ++;
+		}
+		
+		for (int i = 0; i < count.length; i++) {
+			if(count[i] != 0) {
+				for (int j = 0; j < count[i]; j++) {
+					System.out.print(i +1 + " ");
+				}
+			}
 		}
 	}
 	
