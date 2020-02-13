@@ -10,15 +10,15 @@ public class sort {
 		int[] data = { 7, 6, 5, 8, 3, 5 ,9 , 1, 6  };
 		
 		sort sort = new sort();
-		//sort.quickSort(data, 0, number - 1);
+		sort.quickSort(data, 0, number - 1);
 		//sort.selectSort(data);
 		//sort.insertSort(data);
 		//sort.bubbleSort(data);
-		sort.countingSort();
+		//sort.countingSort();
 		//sort.heapSort(data);
-		//for (int i = 0; i < number; i++) {
-		//	System.out.print(data[i] + "  ");
-		//}
+		for (int i = 0; i < number; i++) {
+			System.out.print(data[i] + "  ");
+		}
 	}
 
 	// 선택정렬
@@ -77,11 +77,6 @@ public class sort {
 	}
 	
 	//퀵정렬
-	public void quickSort2(int[] data, int start, int end) {
-		if()
-	}
-	
-	//퀵정렬
 	public void quickSort(int[] data, int start, int end) {
 		//특정한 값을 기준으로 큰 숫자와 작은 숫자를 나누면 어떨까?(두 집합으로)
 		
@@ -96,7 +91,7 @@ public class sort {
 		
 		while(i <= j) { //엇갈릴때 까지 반복. 
 			
-			while(i <= end && data[i] < data[key]) { //키값보다 큰 값 만날때까지 이동.
+			while(i <= end && data[i] <= data[key]) { //키값보다 큰 값 만날때까지 이동.
 				i++; 
 			} 
 			
