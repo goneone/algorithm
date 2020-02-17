@@ -31,7 +31,7 @@ public class sort {
 		//1, 10, 5, 8, 7, 6, 4, 3, 2, 9
 		for (int i = 0; i < data.length; i++) {
 			min = 999;
-			for (int j = i; j < data.length; j++) { //가장작은 값을 찾는거.
+			for (int j = i; j < data.length; j++) { //가장 작은 값을 찾는거.
 				if(min > data[j]) {
 					min = data[j];
 					index = j;
@@ -61,8 +61,9 @@ public class sort {
 
 	// 삽입정렬
 	public void insertSort(int data[]) {
-		// 각 숫자를 적절한 위치에 삽입하면 어떨까?
-		////1, 10, 5, 8, 7, 6, 4, 3, 2, 9
+		//각 숫자를 적절한 위치에 삽입하면 어떨까?
+		//1, 10, 5, 8, 7, 6, 4, 3, 2, 9
+		//1, 5, 8, 7, 10
 		int temp;
 		int j;
 		for (int i = 0; i < data.length -1 ; i++) {
@@ -75,7 +76,17 @@ public class sort {
 			}
 		}
 	}
-	
+	public void insertSort2(int data[]) {
+		int temp;
+		int j; 
+		for (int i = 0; i < data.length-1; i++) {
+			j = i;
+			while(j>=0 && data[j] > data[j+1]) {
+				
+			}
+			
+		}
+	}
 	//퀵정렬
 	public void quickSort(int[] data, int start, int end) {
 		//특정한 값을 기준으로 큰 숫자와 작은 숫자를 나누면 어떨까?(두 집합으로)
@@ -90,7 +101,7 @@ public class sort {
 		int temp; //swap 할 때 담을 변수 
 		
 		while(i <= j) { //엇갈릴때 까지 반복. 
-			
+			System.out.println("l값은 : "+ i + "r값은 : " + j);
 			while(i <= end && data[i] <= data[key]) { //키값보다 큰 값 만날때까지 이동.
 				i++; 
 			} 
@@ -111,6 +122,7 @@ public class sort {
 			}
 	  
 			quickSort(data, start, j - 1); 
+			System.out.println("언제?");
 			quickSort(data, j + 1, end); 
 		}
 	}
