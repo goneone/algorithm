@@ -1,4 +1,4 @@
-package algorithm;
+/*package algorithm;
 
 import java.util.Scanner;
 
@@ -66,3 +66,4 @@ public class array {
 		return dat[count-1];
 	}
 }
+*/
