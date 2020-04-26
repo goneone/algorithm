@@ -42,8 +42,12 @@ class Queue {
 	public Queue(int n) {
 		que = new int[n];
 	}
-	
-	// 큐배열의 인덱스를 늘리면서 값 추가
+
+    public Queue() {
+
+    }
+
+    // 큐배열의 인덱스를 늘리면서 값 추가
 	public void push(int value) {
 		que[tail] = value;
 		tail ++;

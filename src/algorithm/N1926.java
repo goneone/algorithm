@@ -6,7 +6,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class N1926 {
-    //다시 구현중
+    //다시
+    //구현중
     static int[] x = {-1,-1,0,0};
     static int[] y = {0,0, -1, -1};
     static int count;
