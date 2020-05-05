@@ -17,6 +17,7 @@ public class N2698 {
     순환식 세우는게 어려워서 문제*
 */
     public static void main(String[] args) throws IOException {
+        /////못품
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int T = Integer.parseInt(br.readLine());
 
