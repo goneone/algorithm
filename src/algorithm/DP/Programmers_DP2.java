@@ -7,7 +7,7 @@ public class Programmers_DP2 {
         int max = 0;
 
         //trianlge[][] = 거쳐간 숫자의 최댓값을 담은 배열
-
+//
         for(int i = 1; i< triangle.length; i++) {
             for(int j = 0; j<= i; j++) {
                 if(j == 0) { //맨 왼쪽 일 때
