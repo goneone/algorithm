@@ -30,12 +30,10 @@ public class N11054 {
             for (int j = 0; j < i; j++) {
                 if (array[j] < array[i] && dp[i] <= dp[j]) {
                     dp[i] = dp[j] + 1;
-                } 
+                } else if (array[j] > array[i]) {
+                    //
+                }
             }
-        }
-
-        for (int i = 0; i < ; i++) {
-            
         }
 
     }

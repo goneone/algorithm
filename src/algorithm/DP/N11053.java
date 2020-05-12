@@ -12,8 +12,8 @@ public class N11053 {
         //가장 긴 증가하는 부분 수열의 길이
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
-        int[] A = new[N];
-        int[] DP = new[N]; //DP = 해당 수에 들어갈 수있는 가장 긴 증가하는 부분 수열의 개수
+        int[] A = new int[N];
+        int[] DP = new int[N]; //DP = 해당 수에 들어갈 수있는 가장 긴 증가하는 부분 수열의 개수
         StringTokenizer st = new StringTokenizer(br.readLine());
 
 
