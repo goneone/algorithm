@@ -19,14 +19,16 @@ public class N11055 {
         }
 
         for (int i = 0; i < N; i++) {
+            DP[i] = arr[i];
             for (int j = 0; j < i; j++) {
-               if(arr[i] > arr[j]) {
-                   DP[i] = arr[i] + DP[j];
-               }
+                //if(arr[j] < arr[i] && DP[i] < DP[j] + arr[i]) { //DP[i] < DP[j] + arr[i] !
+                if(arr[j] < arr[i] && DP[i] < DP[j] + arr[i]) { //DP[i] < DP[j] + arr[i] !
+                    DP[i] = arr[i] + DP[j];
+                }
             }
         }
 
-        int max = 0;
+        int max = DP[0];
         for (int i = 0; i < N; i++) {
             if(DP[i] > max) {
                 max = DP[i];
