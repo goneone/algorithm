@@ -12,12 +12,13 @@ public class N9251 {
 
         //DP는 뭘로할것인가? 부분 수열이 되는 수열중 가장 긴 수열
         int[] dp = new int[A.length()];
-        int m = 0; //자릿수
+
         //DP초기화
         for (int i = 0; i < dp.length ; i++) {
             dp[i] = 0;
         }
 
+        int m = 0; //자릿수
         for (int k = 0; k < A.length(); k++) {
             for (int i = 0; i < A.length(); i++) {
                 for (int j = m; j < B.length(); j++) {
