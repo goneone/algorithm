@@ -20,6 +20,9 @@ public class test {
         //System.out.println(arrayList.get(1));
         //System.out.println(arrayList.get(2));
         System.out.println(arrayList.set(6, 12345));
+
+        //1 2 3 4 5
+
     }
 
 
