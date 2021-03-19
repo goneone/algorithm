@@ -1,4 +1,4 @@
-package algorithm;
+package algorithm.programmers;
 
 import java.util.Arrays;
 
@@ -17,10 +17,10 @@ public class programmers_array1 {
             int j = commands[z][1] ; //5
             int k = commands[z][2] ; //3
             
-            //1.ÀÚ¸£±â - ¹è¿­ iºÎÅÍ j±îÁöÀÇ °ªÀ» Àß¶ó¼­ ¹è¿­ ¸¸µé±â  i-1ºÎÅÍ j-1±îÁö 
+            //1.ï¿½Ú¸ï¿½ï¿½ï¿½ - ï¿½è¿­ iï¿½ï¿½ï¿½ï¿½ jï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß¶ï¿½ ï¿½è¿­ ï¿½ï¿½ï¿½ï¿½ï¿½  i-1ï¿½ï¿½ï¿½ï¿½ j-1ï¿½ï¿½ï¿½ï¿½ 
             int[] tempArray = Arrays.copyOfRange(array, i-1, j);
             
-            //2.¹è¿­ Á¤·Ä
+            //2.ï¿½è¿­ ï¿½ï¿½ï¿½ï¿½
             //Arrays.sort(tempArray);
             
            /* int temp;
